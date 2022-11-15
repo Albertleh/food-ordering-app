@@ -2,12 +2,11 @@ import React from "react";
 
 const ShoppingCart = (props) => {
 
-
   return (
     <button
       href="#"
       className={
-        "flex items-center text-gray-300  bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-xl px-10 py-4 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-600 dark:focus:ring-gray-600 dark:border-gray-700"
+        "flex items-center text-gray-300  bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-xl text-xl px-10 py-4 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-600 dark:focus:ring-gray-600 dark:border-gray-700"
       }
     >
       Shopping Cart

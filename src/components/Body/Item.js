@@ -1,22 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 
 // title, description, price, id
 const Item = (props) => {
+  const [quantity, setQuantity] = useState("");
+  const [ButtonDisabled, setButtonDisabled] = useState(true);
+
+  const QuantityHandler = (event) => {
+    let ItemQuantity = event.target.value;
+
+    if (ItemQuantity > 0) {
+      setQuantity(ItemQuantity);
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  };
+
+  const SubmitHandler = (event) => {
+    event.preventDefault();
+    setQuantity(quantity);
+    console.log(quantity);
+    setQuantity("");
+  };
+
   return (
-    <li className="flex flex-row justify-center container max-w-full bg-gray-700 rounded-xl py-5 my-5">
-      <div className="text-gray-200 font-bold text-lg w-4/5 flex flex-col justify-start items-start pl-10">
-        {props.title}
-        <div className="font-normal italic text-base">
-            {props.description}
+    <React.Fragment>
+      <li className="flex flex-row justify-center container max-w-full bg-gray-700 rounded-xl py-4 my-3">
+        <div className="text-gray-200 font-bold text-lg w-3/4 flex flex-col justify-start items-start pl-10">
+          {props.title}
+          <div className="font-normal italic text-lg">{props.description}</div>
+          <div className="font-bold pt-2">{props.price} $</div>
         </div>
-      </div>
-      <div className="w-1/5 text-gray-200 flex flex-row justify-end pr-10">
-        <form className="flex flex-col">
-          <label className="pb-1 font-bold">Amount</label>
-          <input className="rounded-md" type="text"></input>
-        </form>
-      </div>
-    </li>
+        <div className="flex flex-col justify-end w-1/4 text-gray-200 pr-10">
+          <form onSubmit={SubmitHandler} className="flex flex-col">
+            <label className="pb-1 font-bold mr-5">
+              Amount
+              <input
+                value={quantity}
+                onChange={QuantityHandler}
+                className="text-gray-900 font-bold rounded-md p-1 w-16 ml-3"
+                type="number"
+              ></input>
+            </label>
+            <button
+              disabled={ButtonDisabled}
+              type="submit"
+              className="disabled:bg-opacity-25 font-bold px-3 py-3 mt-3 bg-gray-800 hover:bg-gray-600  rounded-xl"
+            >
+              Add to cart
+            </button>
+          </form>
+        </div>
+      </li>
+    </React.Fragment>
   );
 };
 

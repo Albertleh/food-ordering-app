@@ -43,7 +43,7 @@ const ItemList = () => {
   });
 
   return (
-    <ul className="py-5 px-10 mt-10 flex flex-col justify-center items-center bg-gray-900 rounded-3xl container mx-auto max-w-5xl">
+    <ul className="py-3 px-6 mt-10 flex flex-col justify-center items-center bg-gray-900 rounded-3xl container mx-auto max-w-5xl">
       {content}
     </ul>
   );

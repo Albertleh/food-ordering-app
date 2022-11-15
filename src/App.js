@@ -9,7 +9,7 @@ function App() {
   return (
     <React.Fragment>
       <NavBar />
-
+        
       <ItemList />
     </React.Fragment>
   );
