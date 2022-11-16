@@ -1,17 +1,24 @@
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
 
 import NavBar from "./components/NavBar/NavBar";
 import ItemList from "./components/Body/ItemList";
-import React from "react";
+import Cart from "./components/Cart/Cart";
+import { CartViewContext } from "./components/Helpers/Context";
+import BlurBackground from "./components/UI/BlurBackground";
 
 function App() {
+  const [cartView, setCartView] = useState(false);
+
   return (
-    <React.Fragment>
-      <NavBar />
+    <CartViewContext.Provider value={{ cartView, setCartView }}>
+      <BlurBackground>
+        <NavBar />
         
-      <ItemList />
-    </React.Fragment>
+        <ItemList />
+      </BlurBackground>
+      {cartView && <Cart />}
+    </CartViewContext.Provider>
   );
 }
 
