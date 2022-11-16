@@ -1,6 +1,8 @@
 import React from "react";
 
 import Item from "./Item";
+import food from "../../assets/food.jpg";
+
 
 const items = [
   {
@@ -43,9 +45,14 @@ const ItemList = () => {
   });
 
   return (
-    <ul className="py-3 px-6 mt-10 flex flex-col justify-center items-center bg-gray-900 rounded-3xl container mx-auto max-w-5xl">
-      {content}
-    </ul>
+    <React.Fragment>
+      <div className="z-0 fixed opacity-90">
+        <img src={food} alt="A table full of vegetables"></img>
+      </div>
+      <ul className="drop-shadow-xl fixed left-1/2 -translate-x-1/2 z-20 py-3 px-6 mt-10 flex flex-col justify-center items-center bg-gray-900 rounded-3xl container mx-auto max-w-5xl">
+        {content}
+      </ul>
+    </React.Fragment>
   );
 };
 

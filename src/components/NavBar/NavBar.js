@@ -34,7 +34,7 @@ const NavBar = () => {
                 Home
               </a>
             </li>
-            <li>
+            <li className="drop-shadow-lg">
               <ShoppingCart ItemCount={"0"} />
             </li>
           </ul>
