@@ -3,6 +3,8 @@ import React, { useContext, useState } from "react";
 import Item from "../Body/Item";
 import { CartViewContext } from "../../Helpers/Context";
 
+// TODO: order button currently is disabled entirely - logic needs to be fixed.
+
 const Cart = (props) => {
   const { setCartView } = useContext(CartViewContext);
 
