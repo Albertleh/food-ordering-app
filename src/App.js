@@ -9,15 +9,20 @@ import BlurBackground from "./components/UI/BlurBackground";
 
 function App() {
   const [cartView, setCartView] = useState(false);
+  const [items, setItems] = useState([]);
+  
+  const ItemAddingHandler = (item) => {
+    setItems([...items, item]);
+  };
 
   return (
     <CartViewContext.Provider value={{ cartView, setCartView }}>
       <BlurBackground>
         <NavBar />
-        
-        <ItemList />
+
+        <ItemList onAddedItem={ItemAddingHandler} />
       </BlurBackground>
-      {cartView && <Cart />}
+      {cartView && <Cart items={items} />}
     </CartViewContext.Provider>
   );
 }

@@ -19,8 +19,16 @@ const Item = (props) => {
   const SubmitHandler = (event) => {
     event.preventDefault();
     setQuantity(quantity);
-    console.log(quantity);
+
+    let item = {
+      title: props.title,
+      description: props.description,
+      price: props.price,
+      quantity: quantity
+    }
+    props.onAddedItem(item);
     setQuantity("");
+
   };
 
   return (

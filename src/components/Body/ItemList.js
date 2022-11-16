@@ -32,10 +32,16 @@ const items = [
   },
 ];
 
-const ItemList = () => {
+const ItemList = (props) => {
+
+  const ItemAddingHandler = (item) => {
+    props.onAddedItem(item);
+  };
+
   let content = items.map((item) => {
     return (
       <Item
+        onAddedItem={ItemAddingHandler}
         title={item.title}
         description={item.description}
         price={item.price}
