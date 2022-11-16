@@ -4,7 +4,7 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemList from "./components/Body/ItemList";
 import Cart from "./components/Cart/Cart";
-import { CartViewContext } from "./components/Helpers/Context";
+import { CartViewContext } from "./Helpers/Context";
 import BlurBackground from "./components/UI/BlurBackground";
 
 function App() {

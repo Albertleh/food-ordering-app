@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import { CartViewContext } from "../Helpers/Context";
-
-
+import { CartViewContext } from "../../Helpers/Context";
 
 const ShoppingCart = (props) => {
-  const {cartView, setCartView} = useContext(CartViewContext);
+  const { setCartView } = useContext(CartViewContext);
 
   return (
     <button

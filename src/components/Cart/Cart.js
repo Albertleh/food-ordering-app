@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 import Item from "../Body/Item";
-import { CartViewContext } from "../Helpers/Context";
+import { CartViewContext } from "../../Helpers/Context";
 
 
 // DUMMY ITEMS

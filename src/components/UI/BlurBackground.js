@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 
-import { CartViewContext } from "../Helpers/Context";
+import { CartViewContext } from "../../Helpers/Context";
 
 const BlurBackground = (props) => {
-  const { cartView, setCartView } = useContext(CartViewContext);
+  const { cartView } = useContext(CartViewContext);
 
   let styles = "";
-
-  console.log(cartView)
 
   if (cartView) {
     styles = "opacity-50";
