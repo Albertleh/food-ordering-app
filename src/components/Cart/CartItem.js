@@ -1,6 +1,11 @@
 import React from "react";
 
 const CartItem = (props) => {
+
+  const RemoveHandler = () => {
+    props.onDelete(props.anotherkey);
+  };
+
   return (
     <li className="shadow-md flex flex-row justify-center container max-w-full bg-gray-700 rounded-xl py-4 my-3">
       <div className="text-[#67eaff] font-bold text-lg w-3/4 flex flex-col justify-start items-start pl-10">
@@ -21,6 +26,7 @@ const CartItem = (props) => {
             </span>
           </label>
           <button
+          onClick={RemoveHandler}
             type="submit"
             className="shadow-md disabled:bg-opacity-25 font-bold px-3 py-3 mt-3 bg-gray-800 hover:bg-gray-900  rounded-xl"
           >

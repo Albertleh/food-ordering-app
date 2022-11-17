@@ -25,6 +25,8 @@ const Item = (props) => {
       description: props.description,
       price: props.price,
       quantity: quantity,
+      key: Math.random(),
+      anotherkey: Math.random()
     };
     props.onAddedItem(item);
     setQuantity("");
