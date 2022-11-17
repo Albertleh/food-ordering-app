@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// title, description, price, id
 const Item = (props) => {
   const [quantity, setQuantity] = useState("");
   const [ButtonDisabled, setButtonDisabled] = useState(true);
@@ -26,14 +25,16 @@ const Item = (props) => {
       price: props.price,
       quantity: quantity,
       key: Math.random(),
-      anotherkey: Math.random()
+      anotherkey: Math.random(),
     };
+
     props.onAddedItem(item);
     setQuantity("");
+    setButtonDisabled(true);
   };
 
   return (
-    <li className="flex flex-row justify-center container max-w-full bg-gray-700 rounded-xl py-4 my-3">
+    <li className="drop-shadow-lg flex flex-row justify-center container max-w-full bg-gray-700 rounded-xl py-4 my-3">
       <div className="text-[#67eaff] font-bold text-lg w-3/4 flex flex-col justify-start items-start pl-10">
         {props.title}
         <div className="text-gray-300 font-normal italic text-lg">
@@ -55,7 +56,7 @@ const Item = (props) => {
           <button
             disabled={ButtonDisabled}
             type="submit"
-            className="disabled:bg-opacity-25 font-bold px-3 py-3 mt-3 bg-gray-800 hover:bg-gray-400  rounded-xl"
+            className="drop-shadow-lg disabled:bg-opacity-25 font-bold px-3 py-3 mt-3 bg-gray-800 hover:bg-gray-400  rounded-xl"
           >
             Add to cart
           </button>

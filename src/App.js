@@ -15,10 +15,14 @@ function App() {
   const ItemAddingHandler = (item) => {
     setTotalQuantity(totalQuantity + parseInt(item.quantity));
     setItems([...items, item]);
-    console.log(totalQuantity);
   };
 
   const ItemDeletingHandler = (key) => {
+    if (key === 'DELETE_ALL') {
+      setItems([]);
+      setTotalQuantity(0);
+      return;
+    }
     let newItems = items.filter((item) => {
       if (item.anotherkey === key) {
         setTotalQuantity(totalQuantity - item.quantity);

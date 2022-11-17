@@ -8,7 +8,7 @@ const BlurBackground = (props) => {
   let styles = "";
 
   if (cartView) {
-    styles = "opacity-50";
+    styles = "blur-lg brightness-75";
   }
 
   return <div className={styles}>{props.children}</div>;

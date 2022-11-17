@@ -8,21 +8,16 @@ import CartItem from "./CartItem";
 const Cart = (props) => {
   const { setCartView } = useContext(CartViewContext);
 
-  const [OrderDisabled, setOrderDisabled] = useState(true);
-
   let totalprice = 0;
   let content = undefined;
+  let OrderButtonDisabled = true;
 
-  useEffect(() => {
-
-  }, [content]);
-
-  if (props.items === ![]) {
-    setOrderDisabled(false);
+  if (parseInt(props.items.length) !== 0) {
+    OrderButtonDisabled = false;
   }
 
   const ItemDeletionHandler = (key) => {
-    props.onDeleteItem(key)
+    props.onDeleteItem(key);
   };
 
   content = props.items.map((item) => {
@@ -42,6 +37,7 @@ const Cart = (props) => {
 
   const OrderHandler = () => {
     console.log("Your Order is being processed!");
+    ItemDeletionHandler('DELETE_ALL');
   };
 
   return (
@@ -60,7 +56,7 @@ const Cart = (props) => {
             Close
           </button>
           <button
-            disabled={OrderDisabled}
+            disabled={OrderButtonDisabled}
             onClick={OrderHandler}
             className="text-white  bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-2xl text-xl px-10 py-3 ml-5 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
           >

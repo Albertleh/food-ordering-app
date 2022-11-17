@@ -13,7 +13,7 @@ const ShoppingCart = (props) => {
       }
     >
       Shopping Cart
-      <div className="drop-shadow-lg text-2xl ml-5 py-1 px-5 rounded-lg font-bold bg-gray-700">
+      <div className="transition-opacity drop-shadow-lg text-2xl ml-5 py-1 px-5 rounded-lg font-bold bg-gray-700">
         {props.ItemCount}
       </div>
     </button>
