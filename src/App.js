@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { /* useState, */ useReducer } from "react";
 import "./App.css";
 
 import NavBar from "./components/NavBar/NavBar";
