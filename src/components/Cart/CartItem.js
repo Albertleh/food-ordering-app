@@ -1,5 +1,6 @@
 import React from "react";
 
+// This is the body of an Item of the shopping cart
 const CartItem = (props) => {
   const RemoveHandler = () => {
     props.onDelete(props.anotherkey);
