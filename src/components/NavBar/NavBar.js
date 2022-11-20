@@ -2,6 +2,7 @@ import React from "react";
 
 import ShoppingCart from "./ShoppingCart";
 
+// This is the Body of the Navigation bar at the top
 const NavBar = (props) => {
   return (
     <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">

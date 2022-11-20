@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartViewContext } from "../../Helpers/Context";
 
+// This is the body of the Shopping Cart Button 
 const ShoppingCart = (props) => {
   const { setCartView } = useContext(CartViewContext);
 
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
 
+  // just some fancy effects when you add an element
   useEffect(() => {
     if (props.ItemCount === 0 || props.ItemCount === undefined) {
       return;

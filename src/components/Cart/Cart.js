@@ -1,10 +1,9 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 
 import { CartViewContext } from "../../Helpers/Context";
 import CartItem from "./CartItem";
 
-// TODO: order button currently is disabled entirely - logic needs to be fixed.
-
+// This is the main body of the shopping cart
 const Cart = (props) => {
   const { setCartView } = useContext(CartViewContext);
 
@@ -35,6 +34,7 @@ const Cart = (props) => {
     );
   });
 
+  // In real life at this point the order should be evaluated by the backend 
   const OrderHandler = () => {
     console.log("Your Order is being processed!");
     ItemDeletionHandler('DELETE_ALL');

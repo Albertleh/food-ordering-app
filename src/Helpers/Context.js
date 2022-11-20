@@ -1,3 +1,5 @@
-import React, {createContext} from "react";
+import {createContext} from "react";
+
+// managing all Context Hooks 
 
 export const CartViewContext = createContext();

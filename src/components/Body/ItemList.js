@@ -3,6 +3,7 @@ import React from "react";
 import Item from "./Item";
 import food from "../../assets/food.jpg";
 
+// just some predefined dishes
 const items = [
   {
     title: "Schnitzel",

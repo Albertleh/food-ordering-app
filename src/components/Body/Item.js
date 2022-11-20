@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// This displays an item that can be selected on the main section
 const Item = (props) => {
   const [quantity, setQuantity] = useState("");
   const [ButtonDisabled, setButtonDisabled] = useState(true);
@@ -25,9 +26,11 @@ const Item = (props) => {
       price: props.price,
       quantity: quantity,
       key: Math.random(),
+      // added anotherkey, since apparently you're not allowed to propagate the key via props
+      // I originally thought I actually ought to be enabled doing whatever i want in react xd
       anotherkey: Math.random(),
     };
-
+    // this prop Drill goes in the app.js to add it to the shopping cart
     props.onAddedItem(item);
     setQuantity("");
     setButtonDisabled(true);
